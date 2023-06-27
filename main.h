@@ -12,7 +12,7 @@
 
 char *read_line(void);
 char **splits(char *line, char *delim);
-int execute(char *parse);
+int execute(char **parse);
 int _putchar(char c);
 unsigned int _strlen(char *s);
 char *_getenv(char **environ, char *dirname);

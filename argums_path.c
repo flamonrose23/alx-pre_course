@@ -41,7 +41,6 @@ char *args_path(char **parse, char **n)
 		if (stat(total, &status) == 0)
 		{
 			for (l = 0; parse(l) != '\0'; l++);
-
 			cat = malloc(sizeof(char *) * (l + 1));
 			cat[l] = NULL;
 			cat[0] = _strdup(total);

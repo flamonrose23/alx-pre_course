@@ -1,0 +1,105 @@
+#include "main.h"
+
+/**
+ * lookforslash - identifying if first char is slash
+ * @cmd: first string
+ * Return: 1 if yes 0 if no
+ */
+
+int lookforslash(char *cmd)
+{
+	int cont = 0;
+
+	while (cmd[cont])
+	{
+		if (cmd[0] == '/')
+		{
+			printf("%c\n", cmd[0]);
+			return (1);
+		}
+
+		cont++;
+	}
+	return (0);
+}
+
+/**
+ * compareExit - identifying if first char is slash
+ * @s1: first string
+ * @s2: exit string
+ * Return: 1 if yes 0 if no.
+ */
+
+int compareExit(char *s1, char *s2)
+{
+	int x = 0;
+
+	for (; (*s2 != '\0' && *s1 != '\0') && *s1 == *s2; s1++)
+	{
+		if (x == 3)
+			break;
+		x++;
+		s2++;
+	}
+
+	return (*s1 - *s2);
+}
+
+/**
+ * compareEnv - identifying if first char is slash
+ * @s1: first string
+ * @s2: exit string
+ * Return: 1 if yes 0 if no.
+ */
+
+int compareEnv(char *s1, char *s2)
+{
+	int x = 0;
+
+	for (; (*s2 != '\0' && *s1 != '\0') && *s1 == *s2; s1++)
+	{
+		if (x == 2)
+			break;
+		x++;
+		s2++;
+	}
+
+	return (*s1 - *s2);
+}
+
+/**
+ * identify_string - identifying keyboard input
+ * @parameter: call prompt from another function
+* Return: str
+ **/
+
+char **identify_string(char *parameter)
+{
+	char **buf = malloc(1024 * sizeof(char *));
+	char *split;
+	int x = 0;
+	char *delim = " \t\n";
+
+
+	split = strtok(parameter, delim);
+
+	while (split != NULL)
+	{
+		buf[x] = split;
+		x++;
+		split = strtok(NULL, delim);
+	}
+	execute_proc(buf);
+	return (buf);
+}
+
+/**
+ * controlC - avoiding close shell
+ * @sig: keep going shell
+ **/
+
+void  controlC(int sig)
+{
+	(void) sig;
+	write(1, "\n$ ", 3);
+}

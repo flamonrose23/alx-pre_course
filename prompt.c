@@ -1,23 +1,16 @@
 #include "main.h"
 
 /**
- * read_line - reading commands
- * Return: line
+ * prompt - printing $ to let user know the program is
+ * ready to take input
+ * printing prompt if shell on intercative mode
+ * Return: no return
  */
 
-char *read_line(void)
+char prompt(void)
 {
-	char *line = NULL;
-	size_t size = 0;
-	int ret = 0;
-
-	if (getline(&line, &size, stdin) == -1)
-	{
-		free(line);
-		exit(-1);
-	}
-	ret = strlen(line);
-	line[ret - 1] = '\0';
-
-	return (line);
+	if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1))
+		flags.interactive = 1;
+	if (flags.interactive)
+		write(STDERR_FILENO, "$ ", 2);
 }

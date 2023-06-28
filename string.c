@@ -1,110 +1,79 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * _strcmp - comparing two strings
- * @s1: compared to s2
- * @s2: compared to s1
- *
- * Return: returning difference between strings
-*/
-
-int _strcmp(char *s1, char *s2)
-{
-	int x = 0, output;
-
-	while (*(s1 + x) == *(s2 + x) && *(s1 + x) != '\0')
-		x++;
-
-	output = (*(s1 + x) - *(s2 + x));
-
-	return (output);
-}
-
-/**
-* _strlen - returning length of string
-* @s: string passed
-*
-* Return: returns length of string passed
-*/
+ * _strlen - returning length of  string
+ * @s: string whose length to check
+ *
+ * Return: integer length of string
+ */
 
 int _strlen(char *s)
 {
-	int count = 0;
+	int x = 0;
 
-	while (*s != '\0')
-	{
-		count++;
-		s++;
-	}
-	return (count);
+	if (!s)
+		return (0);
+
+	while (*s++)
+		x++;
+	return (x);
 }
 
 /**
-* _strncmp - comparing two strings up to n bytes
-* @s1: compared to s2
-* @s2: compared to s1
-* @n: number of bytes
-*
-* Return: difference between s1 and s2
-*/
+ * _strcmp - performs lexicogarphic comparison of two strings
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
+ */
 
-int _strncmp(char *s1, char *s2, int n)
+int _strcmp(char *s1, char *s2)
 {
-	int x;
-
-	for (x = 0; s1[x] && s2[x] && x < n; x++)
+	while (*s1 && *s2)
 	{
-		if (s1[x] != s2[x])
-			return (s1[x] - s2[x]);
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	return (0);
+	if (*s1 == *s2)
+		return (0);
+	else
+		return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
-* _strdup - dupicating string
-* @s: to be duplicated
-*
-* Return: pointer to duplicate string
-*/
+ * starts_with - checks if needle starts with haystack
+ * @haystack: string to search
+ * @needle: the substring to find
+ *
+ * Return: address of next char of haystack or NULL
+ */
 
-char *_strdup(char *s)
+char *starts_with(const char *haystack, const char *needle)
 {
-	char *ptr;
-	int x, len;
-
-	if (s == NULL)
-		return (NULL);
-
-	len = _strlen(s);
-
-	ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (NULL);
-	for (x = 0; *s != '\0'; s++, x++)
-		ptr[x] = s[0];
-
-	ptr[x++] = '\0';
-	return (ptr);
+	while (*needle)
+		if (*needle++ != *haystack++)
+			return (NULL);
+	return ((char *)haystack);
 }
 
 /**
-* _strchr - locating char in string
-* @s: string to be checked
-* @c: char to be located
-*
-* Return: returns pointer to first occurence of character
-* or NULL if character not found
-*/
+ * _strcat - concatenating two strings
+ * @dest: the destination buffer
+ * @src: the source buffer
+ *
+ * Return: pointer to destination buffer
+ */
 
-char *_strchr(char *s, char c)
+char *_strcat(char *dest, char *src)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return (s);
-		s++;
-	}
-	if (!c)
-		return (s);
-	return (NULL);
+	char *ret = dest;
+
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (ret);
 }

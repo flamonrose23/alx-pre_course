@@ -7,8 +7,7 @@
  * @p: address of current position in buf
  *
  * Return: 1 if chain delimeter, 0 otherwise
- */
-
+*/
 int is_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t y = *p;
@@ -37,7 +36,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * check_chain - checks we should continue chaining based on last status
+ * check_chain - checks we should continue chaining based on last status
  * @info: parameter struct
  * @buf: char buffer
  * @p: address of current position in buf
@@ -45,7 +44,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * @len: length of buf
  *
  * Return: Void
- */
+*/
 
 void check_chain(info_t *info, char *buf, size_t *p, size_t x, size_t len)
 {
@@ -72,11 +71,11 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t x, size_t len)
 }
 
 /**
- * replace_alias - replacing aliases in tokenized string
+ * replace_alias - replacing aliases in tokenized string
  * @info: parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
- */
+*/
 
 int replace_alias(info_t *info)
 {
@@ -102,11 +101,11 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - replacing vars in tokenized string
+ * replace_vars - replacing vars in tokenized string
  * @info: parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
- */
+*/
 
 int replace_vars(info_t *info)
 {
@@ -144,12 +143,12 @@ int replace_vars(info_t *info)
 }
 
 /**
- * replace_string - replacing string
+ * replace_string - replacing string
  * @old: address of old string
  * @new: new string
  *
  * Return: 1 if replaced, 0 otherwise
- */
+*/
 
 int replace_string(char **old, char *new)
 {

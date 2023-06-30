@@ -5,7 +5,7 @@
  * @str: input string
  * @d: delimeter string
  * Return: pointer to an array of strings, or NULL on failure
- */
+*/
 
 char **strtow(char *str, char *d)
 {
@@ -49,11 +49,11 @@ char **strtow(char *str, char *d)
 }
 
 /**
- * **strtow2 - spliting string into words
+ * **strtow2 - spliting string into words
  * @str: input string
  * @d: delimeter
  * Return: a pointer to an array of strings, or NULL on failure
- */
+*/
 
 char **strtow2(char *str, char d)
 {
@@ -64,7 +64,7 @@ char **strtow2(char *str, char d)
 		return (NULL);
 	for (x = 0; str[x] != '\0'; x++)
 		if ((str[x] != d && str[x + 1] == d) ||
-				    (str[x] != d && !str[x + 1]) || str[x + 1] == d)
+				(str[x] != d && str[x + 1]) || str[x + 1] == d)
 			numwords++;
 	if (numwords == 0)
 		return (NULL);

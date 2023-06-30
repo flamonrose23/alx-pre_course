@@ -6,7 +6,7 @@
  * @src: the source
  *
  * Return: pointer to destination
- */
+*/
 char *_strcpy(char *dest, char *src)
 {
 	int x = 0;
@@ -27,8 +27,7 @@ char *_strcpy(char *dest, char *src)
  * @str: string to duplicate
  *
  * Return: pointer to the duplicated string
- */
-
+*/
 char *_strdup(const char *str)
 {
 	int length = 0;
@@ -51,8 +50,7 @@ char *_strdup(const char *str)
  * @str: string to be printed
  *
  * Return: Nothing
- */
-
+*/
 void _puts(char *str)
 {
 	int x = 0;
@@ -71,9 +69,8 @@ void _puts(char *str)
  * @c: character to print
  *
  * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
+ * On error, -1 is returned, and errno is set appropriately
+*/
 int _putchar(char c)
 {
 	static int x;

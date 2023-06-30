@@ -5,7 +5,7 @@
  * @s: string whose length to check
  *
  * Return: integer length of string
- */
+*/
 
 int _strlen(char *s)
 {
@@ -25,7 +25,7 @@ int _strlen(char *s)
  * @s2: second string
  *
  * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
- */
+*/
 
 int _strcmp(char *s1, char *s2)
 {
@@ -48,7 +48,7 @@ int _strcmp(char *s1, char *s2)
  * @needle: the substring to find
  *
  * Return: address of next char of haystack or NULL
- */
+*/
 
 char *starts_with(const char *haystack, const char *needle)
 {
@@ -64,7 +64,7 @@ char *starts_with(const char *haystack, const char *needle)
  * @src: the source buffer
  *
  * Return: pointer to destination buffer
- */
+*/
 
 char *_strcat(char *dest, char *src)
 {

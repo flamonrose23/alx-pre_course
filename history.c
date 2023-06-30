@@ -5,7 +5,7 @@
  * @info: parameter struct
  *
  * Return: allocated string contain history file
- */
+*/
 
 char *get_history_file(info_t *info)
 {
@@ -25,11 +25,12 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - creating file, or appends to an existing file
- * @info: the parameter struct
+ * write_history - creating file, or appends to existing file
+ * @info: parameter struct
  *
  * Return: 1 on success, else -1
- */
+*/
+
 int write_history(info_t *info)
 {
 	ssize_t fd;
@@ -54,11 +55,11 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - reading history from file
+ * read_history - reading history from file
  * @info: parameter struct
  *
  * Return: hist count on success and 0 otherwise
- */
+*/
 
 int read_history(info_t *info)
 {
@@ -104,13 +105,14 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - adding entry to history linked list
+ * build_history_list - adding entry to history linked list
  * @info: structure containing potential arguments
  * @buf: buffer
  * @linecount: history line count, hist count
  *
  * Return: Always 0
- */
+*/
+
 int build_history_list(info_t *info, char *buf, int linecount)
 {
 	list_t *node = NULL;
@@ -125,11 +127,11 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - renumbers history linked list after changes
+ * renumber_history - renumbers history linked list after changes
  * @info: structure containing potential arguments
  *
  * Return: new hist count
- */
+*/
 
 int renumber_history(info_t *info)
 {

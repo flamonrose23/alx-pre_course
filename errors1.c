@@ -5,7 +5,7 @@
  * @s: string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  * -1 on error
- */
+*/
 
 int _erratoi(char *s)
 {
@@ -14,7 +14,7 @@ int _erratoi(char *s)
 
 	if (*s == '+')
 		s++;
-	for (x = 0;  s[x] != '\0'; x++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		if (s[x] >= '0' && s[x] <= '9')
 		{
@@ -35,7 +35,7 @@ int _erratoi(char *s)
  * @estr: string containing specified error type
  * Return: 0 if no numbers in string, converted number otherwise
  * -1 on error
- */
+*/
 
 void print_error(info_t *info, char *estr)
 {
@@ -49,12 +49,12 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function prints a decimal (integer) number (base 10)
+ * print_d - function prints a decimal (integer) number (base 10)
  * @input: input
  * @fd: the file descriptor to write to
  *
  * Return: number of characters printed
- */
+*/
 
 int print_d(int input, int fd)
 {
@@ -95,7 +95,7 @@ int print_d(int input, int fd)
  * @flags: argument flags
  *
  * Return: string
- */
+*/
 
 char *convert_number(long int num, int base, int flags)
 {
@@ -129,8 +129,9 @@ char *convert_number(long int num, int base, int flags)
  * remove_comments - function replaces first instance of '#' with '\0'
  * @buf: address of the string to modify
  *
- * Return: Always 0;
- */
+ * Return: Always 0
+*/
+
 void remove_comments(char *buf)
 {
 	int x;

@@ -1,13 +1,14 @@
 #include "shell.h"
 
 /**
- * nput_buf - buffers chained commands
+ * input_buf - buffers chained commands
  * @info: parameter struct
  * @buf: address of buffer
  * @len: address of len var
  *
  * Return: bytes read
- */
+*/
+
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t r = 0;
@@ -49,7 +50,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
  * @info: parameter struct
  *
  * Return: bytes read
- */
+*/
 
 ssize_t get_input(info_t *info)
 {
@@ -97,7 +98,8 @@ ssize_t get_input(info_t *info)
  * @x: size
  *
  * Return: r
- */
+*/
+
 ssize_t read_buf(info_t *info, char *buf, size_t *x)
 {
 	ssize_t r = 0;
@@ -117,7 +119,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *x)
  * @length: size of preallocated ptr buffer if not NULL
  *
  * Return: s
- */
+*/
 
 int _getline(info_t *info, char **ptr, size_t *length)
 {
@@ -159,11 +161,11 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - blocking ctrl-C
+ * sigintHandler - blocking ctrl-C
  * @sig_num: signal number
  *
  * Return: void
- */
+*/
 
 void sigintHandler(__attribute__((unused))int sig_num)
 {

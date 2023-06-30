@@ -6,7 +6,7 @@
  * constant function prototype
  * Return: exits with given exit status
  * (0) if info.argv[0] != "exit"
- */
+*/
 
 int _myexit(info_t *info)
 {
@@ -31,11 +31,11 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - changing current directory of process
+ * _mycd - changing current directory of process
  * @info: Structure containing potential arguments 
  * constant function prototype.
  * Return: Always 0
- */
+*/
 
 int _mycd(info_t *info)
 {
@@ -82,11 +82,11 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - changing current directory of process
+ * _myhelp - changing current directory of process
  * @info: Structure containing potential arguments. Used to maintain
  * constant function prototype.
  * Return: Always 0
- */
+*/
 
 int _myhelp(info_t *info)
 {

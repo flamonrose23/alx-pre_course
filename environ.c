@@ -19,7 +19,7 @@ int _myenv(info_t *info)
  * @name: env var name
  *
  * Return: value
- */
+*/
 
 char *_getenv(info_t *info, const char *name)
 {
@@ -60,7 +60,7 @@ int _mysetenv(info_t *info)
  * @info: Structure containing potential arguments
  * constant function prototype.
  * Return: Always 0
- */
+*/
 
 int _myunsetenv(info_t *info)
 {
@@ -82,7 +82,7 @@ int _myunsetenv(info_t *info)
  * @info: Structure containing potential arguments
  * constant function prototype
  * Return: Always 0
- */
+*/
 
 int populate_env_list(info_t *info)
 {

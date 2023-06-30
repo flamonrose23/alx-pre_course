@@ -41,7 +41,7 @@ extern char **environ;
  * @num: the number field
  * @str: a string
  * @next: points to the next node
- */
+*/
 typedef struct liststr
 {
 	int num;
@@ -50,7 +50,7 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct passinfo - contains pseudo-arguements to pass into a function,
+ * struct passinfo - contains pseudo-arguements to pass into a function,
  * allowing uniform prototype for function pointer struct
  * @arg: a string generated from getline containing arguements
  * @argv:an array of strings generated from arg
@@ -70,7 +70,7 @@ typedef struct liststr
  * @cmd_buf_type: CMD_type ||, &&, ;
  * @readfd: the fd from which to read line input
  * @histcount: the history line number count
- */
+*/
 typedef struct passinfo
 {
 	char *arg;
@@ -99,10 +99,10 @@ typedef struct passinfo
 		0, 0, 0}
 
 /**
- * struct builtin - contains a builtin string and related function
+ * struct builtin - contains a builtin string and related function
  * @type: the builtin command flag
  * @func: the function
- */
+*/
 typedef struct builtin
 {
 	char *type;

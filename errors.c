@@ -5,7 +5,7 @@
  * @str: string to be printed
  *
  * Return: Nothing
- */
+*/
 
 void _eputs(char *str)
 {
@@ -24,9 +24,9 @@ void _eputs(char *str)
  * _eputchar - writing character c to stderr
  * @c: character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
+ * Return: On success 1
+ * On error, -1 is returned and errno is set appropriately
+*/
 
 int _eputchar(char c)
 {
@@ -48,9 +48,9 @@ int _eputchar(char c)
  * @c: character to print
  * @fd: The file descriptor to write to
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
+ * Return: On success 1
+ * On error, -1 is returned and errno is set appropriately
+*/
 
 int _putfd(char c, int fd)
 {
@@ -73,7 +73,7 @@ int _putfd(char c, int fd)
  * @fd: file descriptor to write to
  *
  * Return: number of chars put
- */
+*/
 
 int _putsfd(char *str, int fd)
 {
